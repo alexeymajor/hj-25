@@ -18,8 +18,8 @@ function getNextImg() {
     return imgs[curIndex];
 }
 
-function showNextImg() {
-    img.src = getNextImg();
-}
+setInterval(() => {
+    img.src = getNextImg()
+}, 5000);
 
-setInterval(showNextImg, 5000);
+img.src = imgs[curIndex];
