@@ -16,8 +16,6 @@ class Player {
 
         this.title = Array.from(player.getElementsByClassName('title'));
 
-        this.playstate = Array.from(player.getElementsByClassName('playstate'));
-
         this.currentIndex = 0;
 
         this.audio = player.querySelector('audio');
@@ -34,7 +32,7 @@ class Player {
             button => button.onclick = () => this.stop()
         );
 
-        this.playstate.forEach(
+        Array.from(player.getElementsByClassName('playstate')).forEach(
             button => button.onclick = () => {
                 if (this.playing) {
                     this.pause();
