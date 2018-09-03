@@ -91,14 +91,6 @@ class Player {
 
     }
 
-    back() {
-        this.current--;
-    }
-
-    next() {
-        this.current++;
-    }
-
 }
 
 const players = [];
