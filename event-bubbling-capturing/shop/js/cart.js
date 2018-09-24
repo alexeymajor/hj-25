@@ -5,6 +5,9 @@ const itemsList = document.querySelector('.items-list');
 itemsList.addEventListener('click', onAddToCart);
 
 function onAddToCart(e) {
+
+    e.preventDefault();
+
     if (!e.target.classList.contains('add-to-cart')) {
         return;
     }

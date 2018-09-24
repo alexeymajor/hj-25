@@ -18,6 +18,8 @@ function handleTableClick(event) {
 
     event.target.dataset.dataDir = dir;
 
+    table.dataset.sortBy = sortBy;
+
   
 }
 
