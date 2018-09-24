@@ -13,8 +13,8 @@ class Tabs {
 
         while (article) {
             const tab = {article: article, tab: templateTab.cloneNode(true)};
-            tab.tab.textContent = article.dataset.tabTitle;
-            tab.tab.classList.add(article.dataset.tabIcon);
+            tab.tab.firstElementChild.textContent = article.dataset.tabTitle;
+            tab.tab.firstElementChild.classList.add(article.dataset.tabIcon);
 
             tab.tab.addEventListener('click', evt => {
                 this.activeTab = tab;
@@ -39,12 +39,12 @@ class Tabs {
     set activeTab(tab) {
 
         if (this._acticveTab) {
-            this._acticveTab.tab.classList.remove('ui-tabs-active');
+            this._acticveTab.tab.firstElementChild.classList.remove('ui-tabs-active');
             this._acticveTab.article.classList.add('hidden');
         }
 
         this._acticveTab = tab;
-        this._acticveTab.tab.classList.add('ui-tabs-active');
+        this._acticveTab.tab.firstElementChild.classList.add('ui-tabs-active');
         this._acticveTab.article.classList.remove('hidden');
 
     }
